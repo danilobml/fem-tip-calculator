@@ -1,3 +1,13 @@
+html{ 
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+   box-sizing:inherit;
+}
+
+
 :root {
   font-size: 24px;
   font-family: 'Space Mono', monospace;
@@ -10,6 +20,182 @@
 --White: hsl(0, 0%, 100%);
 }
 
+/* Body and background */
+body{
+  background-color: var(--Light-grayish-cyan);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+
+h1{
+  font-size: 18px;
+  color: var(--Very-dark-cyan);
+  letter-spacing: 6px;
+}
+
+.top-h1{
+  margin-bottom: 0;
+}
+
+.bottom-h1{
+  margin-top: 0;
+  margin-bottom: 1.1rem;
+}
+
+/* Main container */
+
+.main-container {
+  background-color: var(--White);
+  padding: 1.2rem;
+  padding-top: 0.5rem;
+  border-radius: 1rem;
+  width: 100%;
+  margin: auto 0;
+}
+
+h6{
+  color: var(--Dark-grayish-cyan);
+  margin: 0;
+  margin-top: 0.5rem;
+  margin-bottom: 0.2rem;
+  font-size: 0.5rem;
+}
+
+/* First ("bill") and "Number of people" screens */
+
+.bill-screen, .people-screen{
+  background-color: var(--Very-light-grayish-cyan);
+  padding: 0.2rem;
+  border-radius: 0.2rem; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.icon-dollar{
+  height: 0.55rem;
+  width: 0.35rem;
+  margin-left: 0.2rem;
+}
+
+.icon-person {
+  height: 0.5rem;
+  width: 0.43rem;
+  margin-left: 0.4rem;
+}
+
+.input-bill, .input-people{
+  color: var(--Very-dark-cyan);
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 90%;
+  text-align: end;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding-right: 0.4rem;
+  font-family: 'Space Mono', monospace;
+}
+
+/* Number input without arrows - Chrome, Edge, Opera etc */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Number input without arrows - Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* % Selection div */
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: space-around;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem
+}
+
+button {
+  width: 47%;
+  height: 35px;
+  font-weight: 700;
+  font-size: 0.7rem;
+  border-radius: 0.2rem;
+  border: none;
+  font-family: 'Space Mono', monospace;
+}
+
+button:active {
+  background-color: var(--Strong-cyan);
+  color: var(--Very-dark-cyan);
+}
+
+.selector {
+  background-color: var(--Very-dark-cyan);
+  color: var(--Very-light-grayish-cyan);
+}
+
+.custom {
+  color: var(--Dark-grayish-cyan);
+}
+
+/* End (amount) Screen */
+
+.amount-screen {
+  background-color: var(--Very-dark-cyan);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.screen-p-big {
+  color: var(--White);
+  margin-bottom: 0.1rem;
+  margin-left: 0.2rem;
+}
+
+.screen-p-small {
+  font-size: 0.5rem;
+  color: var(--Grayish-cyan);
+  margin-top: 0;
+  margin-left: 0.2rem;
+}
+
+.amount, .total {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.7rem;
+}
+
+.result-amount, .result-total {
+  color: var(--Strong-cyan);
+  font-size: 1rem;
+  margin-right: 0.1rem;
+}
+
+.dollar-result{
+  font-size: 1rem;
+    margin-right: 0.1rem;
+  filter: invert(57%) sepia(95%) saturate(330%) hue-rotate(122deg) brightness(91%) contrast(93%);
+  font-weight: bold;
+}
+
+.reset {
+  width: 100%;
+  background-color: var(--Strong-cyan);
+  font-size: 0.7rem;
+  align-self: center;
+}
+
 .attribution {
     font-size: 11px;
     text-align: center;
@@ -19,6 +205,15 @@
     color: hsl(228, 45%, 44%);
   }
 
-  @media screen and (max-width: 375px) {
-    
+  @media screen and (max-width: 376px) {
+    .main-container{
+      width: 100%;
+    }
+
+  }
+
+  @media screen and (min-width: 376px) {
+    .main-container{
+  
+    }
   }

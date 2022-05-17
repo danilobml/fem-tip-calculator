@@ -50,10 +50,11 @@ h1{
 .main-container {
   background-color: var(--White);
   padding: 1.2rem;
-  padding-top: 0.5rem;
+  padding-top: 0.6rem;
   border-radius: 1rem;
-  width: 100%;
   margin: auto 0;
+  width:100%;
+  max-width: 370px; 
 }
 
 h6{
@@ -68,37 +69,46 @@ h6{
 
 .bill-screen, .people-screen{
   background-color: var(--Very-light-grayish-cyan);
-  padding: 0.2rem;
   border-radius: 0.2rem; 
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1rem;
+  position: relative;
 }
 
 .icon-dollar{
   height: 0.55rem;
   width: 0.35rem;
-  margin-left: 0.2rem;
+  margin-left: 0.5rem;
+  position: absolute;
 }
 
 .icon-person {
   height: 0.5rem;
   width: 0.43rem;
   margin-left: 0.4rem;
+  position: absolute;
 }
 
 .input-bill, .input-people{
   color: var(--Very-dark-cyan);
+  padding:0.2rem;
   background: transparent;
   border: none;
   outline: none;
-  width: 90%;
+  width: 100%;
   text-align: end;
   font-size: 0.8rem;
   font-weight: 700;
   padding-right: 0.4rem;
   font-family: 'Space Mono', monospace;
+  border-radius: 0.2rem;
+  padding-left:30px;
+}
+
+.input-bill:focus, .input-people:focus {
+  border: 3px solid var(--Strong-cyan);
 }
 
 /* Number input without arrows - Chrome, Edge, Opera etc */
@@ -113,7 +123,7 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
-/* % Selection div */
+/* Tip (%) selectors div */
 .buttons {
   display: flex;
   flex-wrap: wrap;
@@ -124,6 +134,28 @@ input[type=number] {
 }
 
 button {
+  width: 45%;
+  height: 37.5px;
+  font-weight: 700;
+  border-radius: 0.2rem;
+  border: none;
+  font-family: 'Space Mono', monospace;
+}
+
+button.selector {
+  background-color: var(--Very-dark-cyan);
+  color: var(--Very-light-grayish-cyan);
+  font-size: 0.75rem;
+}
+
+button.selector:focus, button.activated {
+  background-color: var(--Strong-cyan);
+  color: var(--Very-dark-cyan);
+}
+
+.custom {
+  background-color: var(--Very-light-grayish-cyan);
+  color: var(--Dark-grayish-cyan);
   width: 47%;
   height: 35px;
   font-weight: 700;
@@ -131,27 +163,16 @@ button {
   border-radius: 0.2rem;
   border: none;
   font-family: 'Space Mono', monospace;
+  text-align: center;
 }
 
-button:active {
-  background-color: var(--Strong-cyan);
-  color: var(--Very-dark-cyan);
-}
-
-.selector {
-  background-color: var(--Very-dark-cyan);
-  color: var(--Very-light-grayish-cyan);
-}
-
-.custom {
-  color: var(--Dark-grayish-cyan);
-}
-
-/* End (amount) Screen */
+/* Big Screen - amount and total */
 
 .amount-screen {
   background-color: var(--Very-dark-cyan);
-  padding: 0.5rem;
+  padding: 0.7rem;
+  margin-top: 0.5rem;
+  padding-top: 1.3rem;
   border-radius: 0.5rem;
   display: flex;
   flex-direction: column;
@@ -159,21 +180,21 @@ button:active {
 
 .screen-p-big {
   color: var(--White);
-  margin-bottom: 0.1rem;
+  margin-bottom: 0.3rem;
   margin-left: 0.2rem;
+  margin-top: 1rem
 }
 
 .screen-p-small {
   font-size: 0.5rem;
   color: var(--Grayish-cyan);
-  margin-top: 0;
   margin-left: 0.2rem;
 }
 
 .amount, .total {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 0.7rem;
+  margin-bottom: 0.8rem;
 }
 
 .result-amount, .result-total {
@@ -190,9 +211,11 @@ button:active {
 }
 
 .reset {
-  width: 100%;
+  margin-top: 0.4rem;
   background-color: var(--Strong-cyan);
-  font-size: 0.7rem;
+  color: var(--Very-dark-cyan);
+  width: 100%;
+  font-size: 0.65rem;
   align-self: center;
 }
 
@@ -205,15 +228,27 @@ button:active {
     color: hsl(228, 45%, 44%);
   }
 
-  @media screen and (max-width: 376px) {
-    .main-container{
-      width: 100%;
-    }
-
-  }
-
   @media screen and (min-width: 376px) {
     .main-container{
-  
+      width: 100%;
+      max-width: 100%;
     }
+    .reset {
+      background-color: hsla(183, 52%, 29%, 0.8);;
+      color: var(--Dark-grayish-cyan);
+      width: 100%;
+      font-size: 0.7rem;
+      align-self: center;
+    }
+    
+    .reset:hover {
+      background-color: var(--Light-grayish-cyan);
+      color: var(--Very-dark-cyan);
+    }
+    
+    .reset:active {
+      background-color: var(--Strong-cyan);
+      color: var(--Very-dark-cyan);
+    }
+
   }

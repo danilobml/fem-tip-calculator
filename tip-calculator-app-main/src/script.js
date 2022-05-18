@@ -98,7 +98,7 @@ resetButton.addEventListener("click", reset);
 function calculateTipAmount(billValue, percent, peopleNumber) {
   if (billValue > 0 && percent > 0 && peopleNumber > 0) {
     const tip = billValue * (percent / 100);
-    calculatedTipAmount = tip / peopleNumber;
+    calculatedTipAmount = Math.ceil((tip / peopleNumber) * 100) / 100;
   } else {
     calculatedTipAmount = 0.0;
   }

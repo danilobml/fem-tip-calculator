@@ -7,6 +7,7 @@ const peopleInput = document.querySelector(".input-people");
 const displayAmount = document.querySelector("#value-amount");
 const displayTotal = document.querySelector("#value-total");
 const resetButton = document.querySelector(".reset");
+const noZero = document.querySelector(".no-zero");
 
 let billValue;
 let percent;
@@ -22,7 +23,7 @@ function calculateAll() {
   displayTotal.textContent = Number(resTotal).toFixed(2);
 }
 
-// Functionalities (getting values) and event listeners
+// Functionalities, getting values and event listeners
 function getBillValue() {
   billValue = billInput.value;
   calculateAll();
@@ -53,6 +54,7 @@ function getCustomValue() {
   let customValue = customSelector.value;
   if (customValue > 0) {
     percent = customValue;
+    deactivateSelectors();
     calculateAll();
     return percent;
   }
@@ -60,14 +62,25 @@ function getCustomValue() {
 
 customSelector.addEventListener("input", getCustomValue);
 
+function removingNoZero() {
+  peopleInput.classList.replace("input-people-zero", "input-people");
+  noZero.style.display = "none";
+}
+
 function getPeopleNumber() {
-  let peopleValue = peopleInput.value;
-  peopleNumber = peopleValue;
-  calculateAll();
-  return peopleNumber;
+  if (peopleInput.value > 0) {
+    let peopleValue = peopleInput.value;
+    peopleNumber = peopleValue;
+    calculateAll();
+    return peopleNumber;
+  } else {
+    peopleInput.classList.replace("input-people", "input-people-zero");
+    noZero.style.display = "block";
+  }
 }
 
 peopleInput.addEventListener("input", getPeopleNumber);
+peopleInput.addEventListener("blur", removingNoZero);
 
 function reset() {
   billValue = 0;

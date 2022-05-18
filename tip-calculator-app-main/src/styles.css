@@ -54,7 +54,7 @@ h1{
   border-radius: 1rem;
   margin: auto 0;
   width:100%;
-  max-width: 370px; 
+  max-width: 360px; 
 }
 
 h6{
@@ -111,6 +111,31 @@ h6{
   border: 3px solid var(--Strong-cyan);
 }
 
+.people{
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-people-zero {
+  border: 3px solid orangered;
+  padding: 0.2rem;
+  background: transparent;
+  outline: none;
+  width: 100%;
+  text-align: end;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding-right: 0.4rem;
+  font-family: 'Space Mono', monospace;
+  border-radius: 0.2rem;
+  padding-left:30px;
+}
+
+.no-zero{
+  color: orangered;
+  display: none;
+}
+
 /* Number input without arrows - Chrome, Edge, Opera etc */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -119,7 +144,7 @@ input::-webkit-inner-spin-button {
 }
 
 /* Number input without arrows - Firefox */
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
 }
 
@@ -128,14 +153,14 @@ input[type=number] {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  justify-content: space-around;
+  justify-content: center;
   margin-top: 0.5rem;
   margin-bottom: 1rem
 }
 
 button {
-  width: 45%;
-  height: 37.5px;
+  width: 47%;
+  height: 38px;
   font-weight: 700;
   border-radius: 0.2rem;
   border: none;
@@ -148,7 +173,7 @@ button.selector {
   font-size: 0.75rem;
 }
 
-button.selector:focus, button.activated {
+button.activated {
   background-color: var(--Strong-cyan);
   color: var(--Very-dark-cyan);
 }
@@ -157,13 +182,18 @@ button.selector:focus, button.activated {
   background-color: var(--Very-light-grayish-cyan);
   color: var(--Dark-grayish-cyan);
   width: 47%;
-  height: 35px;
+  height: 38px;
   font-weight: 700;
   font-size: 0.7rem;
   border-radius: 0.2rem;
   border: none;
+  outline: none;
   font-family: 'Space Mono', monospace;
   text-align: center;
+}
+
+.custom:focus{
+  border: 3px solid var(--Strong-cyan);
 }
 
 /* Big Screen - amount and total */
@@ -178,34 +208,38 @@ button.selector:focus, button.activated {
   flex-direction: column;
 }
 
-.screen-p-big {
+.screen-text-big {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.5rem;
+  font-weight: 700;
   color: var(--White);
-  margin-bottom: 0.3rem;
-  margin-left: 0.2rem;
-  margin-top: 1rem
+  margin-left:0.3rem;
 }
 
-.screen-p-small {
-  font-size: 0.5rem;
+.screen-text-small {
+  font-size: 0.4rem;
+  font-weight: 700;
   color: var(--Grayish-cyan);
-  margin-left: 0.2rem;
+  margin-top: 0;
+  margin-left: 0.3rem;
 }
 
 .amount, .total {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 0.8rem;
 }
 
 .result-amount, .result-total {
+  font-weight: 700;
   color: var(--Strong-cyan);
   font-size: 1rem;
   margin-right: 0.1rem;
+  margin-top: 0.5rem
 }
 
 .dollar-result{
   font-size: 1rem;
-    margin-right: 0.1rem;
+  margin-right: 0.1rem;
   filter: invert(57%) sepia(95%) saturate(330%) hue-rotate(122deg) brightness(91%) contrast(93%);
   font-weight: bold;
 }

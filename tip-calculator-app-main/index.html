@@ -31,10 +31,13 @@
     <button class="selector" value="15">15%</button>
     <button class="selector" value="25">25%</button>
     <button class="selector" value="50">50%</button>
-    <input type="text" class="custom" placeholder="Custom"></button>
-  </div>
+    <input type="text" class="custom" placeholder="Custom">
+    </div>
     <!-- People screen input -->
+    <div class="people">
     <h6>Number of People<h6> 
+    <h6 class="no-zero">Can't be zero</h6>
+    </div>
     <div class="people-screen">
       <img src="./images/icon-person.svg" class="icon-person" alt="icon-person">
       <input class="input-people" type="number" placeholder="0" min="0" onfocus="this.value=''">
@@ -42,14 +45,16 @@
     <!-- Big screen - amount and total -->
     <div class="amount-screen">
     <div class="amount">
-    <span><span class="screen-p-big">Tip Amount</span><span class="screen-p-small"><br>/ person</span></span>
+    <span><span class="screen-text-big">Tip Amount</span><p class="screen-text-small">/ person</p></span>
     <div class="result-amount"><span><img src="./images/icon-dollar.svg" alt="icon-dollar" class="dollar-result"></span><span id="value-amount">0.00</span></div>
     </div>
     <div class="total">
-      <span><span class="screen-p-big">Total</span><span class="screen-p-small"><br>/ person</span></span>
-      <div class="result-amount"><span><img src="./images/icon-dollar.svg" alt="icon-dollar" class="dollar-result"></span><span id="value-total">0.00</span></div>
-      </div>
-    <button class="reset">RESET</button> </div> 
+      <span><span class="screen-text-big">Total</span><p class="screen-text-small">/ person</p></span>
+      <div class="result-amount"><span><img src="./images/icon-dollar.svg" alt="icon-dollar" class="dollar-result"></span><span id="value-total">0.00</span>
+    </div>
+    </div>
+    <button class="reset">RESET</button> 
+    </div> 
     </div>
     <!-- End of main container -->
     <div class="attribution">Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="https://github.com/danilobml">danilobml</a>.</div>

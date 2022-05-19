@@ -35,8 +35,8 @@ This is my solution to the challenge. I'm learning HTML/CSS/JavaScript developme
 
 ### Links
 
-- Solution URL: [Add solution URL here]()
-- Live Site URL: [Add live site URL here](https://danilobml.github.io/fem-tip-calculator/)
+- Solution URL:(https://github.com/danilobml/fem-tip-calculator)
+- Live Site URL:(https://danilobml.github.io/fem-tip-calculator/)
 
 ## My process
 
